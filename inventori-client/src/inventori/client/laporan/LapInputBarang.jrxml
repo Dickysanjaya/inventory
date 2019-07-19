@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5d53c3fd-1b29-4173-843f-73fa99e63cb9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\New folder\\skripsiproject\\inventori-client\\src\\inventori\\client\\laporan\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="detil" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="tgl" class="java.util.Date">
+		<fieldDescription><![CDATA[tgl]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Double">
+		<fieldDescription><![CDATA[total]]></fieldDescription>
+	</field>
+	<field name="pemasok" class="entity.Pemasok">
+		<fieldDescription><![CDATA[pemasok]]></fieldDescription>
+	</field>
+	<field name="no_beli" class="java.lang.String">
+		<fieldDescription><![CDATA[no_beli]]></fieldDescription>
+	</field>
+	<field name="gudang" class="entity.Gudang">
+		<fieldDescription><![CDATA[gudang]]></fieldDescription>
+	</field>
+	<field name="detailPembelian" class="java.util.List">
+		<fieldDescription><![CDATA[detailPembelian]]></fieldDescription>
+	</field>
+	<variable name="tgl" class="java.util.Date">
+		<variableExpression><![CDATA[new java.util.Date()]]></variableExpression>
+	</variable>
+	<group name="id">
+		<groupExpression><![CDATA[$F{no_beli}]]></groupExpression>
+		<groupHeader>
+			<band height="54">
+				<textField>
+					<reportElement uuid="d145eb60-782a-48d3-a82a-b51362ea8842" x="100" y="6" width="100" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{no_beli}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="78e129b8-e9e5-472c-ad18-1a3fd867314d" x="0" y="6" width="100" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<text><![CDATA[No Beli :  ]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="fcc71781-a6d5-46d0-9a91-2b1772bff9da" x="100" y="26" width="100" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{tgl}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="e89759bf-990b-41d7-b146-756962ba8cec" x="0" y="26" width="100" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<text><![CDATA[Tangal :  ]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="0ff65a6c-8595-463c-ae50-e59193645cdb" x="443" y="6" width="100" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""+$F{pemasok}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="3a2e3c7d-d3cd-443b-a133-cdc3c361d4bd" x="443" y="26" width="100" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""+$F{gudang}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="7eeb61fb-cedb-4a9d-81e9-64dc469902ac" x="343" y="6" width="100" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<text><![CDATA[Pemasok :  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="aa62e828-f77a-4c25-893f-58f70a8c9427" x="343" y="26" width="100" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<text><![CDATA[Gudang :  ]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="05a47c01-56dd-4723-b6c3-40f7181c736e" x="1" y="52" width="554" height="1"/>
+					<graphicElement>
+						<pen lineWidth="2.0" lineStyle="Double"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="164">
+				<line>
+					<reportElement uuid="9d06dd19-4ce8-40cb-a70f-2f80f87ec210" x="264" y="9" width="291" height="1"/>
+				</line>
+				<staticText>
+					<reportElement uuid="40425fd9-4ec3-44ec-8f27-fa5acb759b3c" x="343" y="22" width="100" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="12" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Total Bayar :  ]]></text>
+				</staticText>
+				<textField pattern="Rp #,##0">
+					<reportElement uuid="96340be1-3fa2-4abf-bff6-7e571c0870ce" x="443" y="22" width="112" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="12" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="7a86563d-59bd-45c1-a3c0-9cce78a532dc" x="14" y="42" width="53" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Jakaarta,]]></text>
+				</staticText>
+				<textField pattern="dd MMMMM yyyy">
+					<reportElement uuid="48cfd437-d76c-4506-a5b5-5fc9fcc18a18" x="67" y="42" width="100" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$V{tgl}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="6f13158e-31c8-4bc9-9a1d-3d7e04c3e5b3" x="14" y="124" width="153" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[(........Petugas Gudang........)]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<frame>
+				<reportElement uuid="6546527b-5333-4f47-93a7-e4e3b29de38c" x="0" y="0" width="555" height="79"/>
+				<staticText>
+					<reportElement uuid="a49a4072-36d5-4ae0-8750-ab61a3dc679e" x="335" y="17" width="208" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[LAPORAN INPUT BARANG]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="49456dd2-75da-4bb8-af54-524808e43a3e" x="32" y="17" width="100" height="20"/>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Toko Avi's]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="fd38a1c2-079c-4e27-ac82-be3fea88bcbf" x="32" y="37" width="296" height="17"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Jl. KH. Mas Mansyur,   Kampung Bali, Central Jakarta 10250
+					  Kampung Bali
+					  Central Jakarta 10250
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="470c0fa0-93e8-4ace-baec-fc5f69392414" x="32" y="54" width="100" height="20"/>
+					<textElement/>
+					<text><![CDATA[Tlp. (021) 23571126]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="f3cb2897-e303-4624-91be-4e5291a2d856" x="0" y="72" width="555" height="1"/>
+				</line>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="ecbde548-708c-47ea-a2ba-1d0bd4ee0942" x="1" y="0" width="554" height="125"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{detailPembelian})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{detil}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

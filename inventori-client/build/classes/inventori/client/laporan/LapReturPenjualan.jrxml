@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c32335f-6439-40e0-95af-624a7384ff22">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\New folder\\skripsiproject\\inventori-client\\src\\inventori\\client\\laporan\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="returDetil" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="admin" class="entity.Admin">
+		<fieldDescription><![CDATA[admin]]></fieldDescription>
+	</field>
+	<field name="kd_retur_jual" class="java.lang.String">
+		<fieldDescription><![CDATA[kd_retur_jual]]></fieldDescription>
+	</field>
+	<field name="keterangan" class="java.lang.String">
+		<fieldDescription><![CDATA[keterangan]]></fieldDescription>
+	</field>
+	<field name="returnDetils" class="java.util.List">
+		<fieldDescription><![CDATA[returnDetils]]></fieldDescription>
+	</field>
+	<field name="tgl" class="java.util.Date">
+		<fieldDescription><![CDATA[tgl]]></fieldDescription>
+	</field>
+	<group name="id">
+		<groupExpression><![CDATA[$F{kd_retur_jual}]]></groupExpression>
+		<groupHeader>
+			<band height="66">
+				<staticText>
+					<reportElement uuid="876c0b2d-4d65-4c1d-9627-9bada25e2127" x="2" y="13" width="100" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<text><![CDATA[No Return :  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="95051bf3-1543-4f5c-988c-0341491b53a1" x="2" y="33" width="100" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<text><![CDATA[Tanggal :  ]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="fa971938-70c8-4aaf-9178-ab8d5fcca536" x="102" y="13" width="100" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{kd_retur_jual}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="1e12252e-eaf3-4e7e-9f9f-c4e57ab55c59" x="102" y="33" width="100" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{tgl}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="2692bbd8-2a4f-417c-a2a3-329489710426" x="279" y="13" width="100" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<text><![CDATA[Admin :  ]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="b684c254-ad09-4c03-8ccd-2628f0b1e23c" x="379" y="13" width="100" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""+$F{admin}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="1630d4b9-f3fc-4cd5-a68c-083cc5715e42" x="279" y="33" width="100" height="20"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<text><![CDATA[Keterangan :  ]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="ac4d5eb6-611c-479c-9339-6b000e00490b" x="379" y="33" width="167" height="20"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{keterangan}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement uuid="a3c99b31-1c48-4e05-9f86-3d67bc1446eb" x="1" y="63" width="554" height="1"/>
+					<graphicElement>
+						<pen lineWidth="2.0" lineStyle="Double"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="171">
+				<staticText>
+					<reportElement uuid="5d9671e6-d7c8-44b8-9220-af8bc32009a7" x="378" y="27" width="41" height="20"/>
+					<textElement/>
+					<text><![CDATA[Jakarta, ]]></text>
+				</staticText>
+				<textField pattern="dd MMMMM yyyy">
+					<reportElement uuid="b76a999a-d2d9-4171-a657-95bfc6f08107" x="419" y="27" width="110" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{tgl}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="bceecb3a-dc14-4c0d-9622-60104edb26f5" x="367" y="121" width="151" height="20"/>
+					<textElement/>
+					<text><![CDATA[(.................Admin..................)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="6a812595-53ef-4404-b582-1956c6dc2651" x="179" y="121" width="129" height="20"/>
+					<textElement/>
+					<text><![CDATA[(.........Pelanggan.............)]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="a06cd527-f4ac-4249-a59e-bf2634ae957d" x="1" y="2" width="554" height="1"/>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<frame>
+				<reportElement uuid="4c5cbac6-580c-4f86-8275-18bea3de5bf5" x="0" y="0" width="555" height="79"/>
+				<staticText>
+					<reportElement uuid="ac0acbea-00b1-41a0-a36e-139f3f690c61" x="57" y="52" width="100" height="20"/>
+					<textElement/>
+					<text><![CDATA[Tlp. (021) 23571126]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="a6c7903d-eeb7-4e8b-aa4f-902ce5176128" x="388" y="10" width="158" height="20"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[RETURN PENJUALAN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="c574b48c-a289-4e5c-874f-f834c3addadc" x="57" y="32" width="322" height="20"/>
+					<textElement/>
+					<text><![CDATA[Jl. KH. Mas Mansyur,   Kampung Bali, Central Jakarta 10250
+					  Kampung Bali
+					  Central Jakarta 10250
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="5a3d03b7-1b9e-41a1-be8a-f5c0ef586c34" x="57" y="12" width="100" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TOKO Avi's]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="b3dbaa94-88d6-4508-9598-b8ef328518ec" x="2" y="77" width="553" height="1"/>
+				</line>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="100" splitType="Stretch">
+			<subreport isUsingCache="true">
+				<reportElement uuid="0b549249-a29c-4263-8a3e-6c46fb28e2ad" x="0" y="0" width="555" height="100"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{returnDetils})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{returDetil}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
